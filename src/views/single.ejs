@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <%- include('shared/head'); %>
+    </head>
+<body>
+    <%- include('shared/nav-bar', { user }); %>
+    
+    <div class="container-fluid">
+        <div class="col-md-10 offset-md-1 post-card">
+            <h3><%= post.title %></h3>
+            <p><%= post.text %></p>
+            <hr />
+        </div>
+    </div>
+    
+    <%- include('shared/footer'); %>
+</body>
+
+</html>

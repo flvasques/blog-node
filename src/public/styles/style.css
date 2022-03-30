@@ -1,0 +1,10 @@
+.container {
+    min-height: 80vh !important;
+}
+.post-card {
+    padding: 10px 10px;
+    margin-top: 20px;
+}
+.signup-form {
+    margin-top: 25px !important;
+}

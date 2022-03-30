@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <%- include('shared/head'); %>
+    </head>
+    <body>
+        <%- include('shared/nav-bar', { user }); %>
+        
+        <main class="container">
+            <% list.forEach(function(item) { %>
+                <div class="col m10 offset-m1 post-card">
+                    <h3><%= item.title %></h3>
+                    <p><%= item.text %></p>
+                    <p>< href="postagem/<%= item.id %>">Ler mais</a></p>
+                    <hr />
+                </div>
+            <% }); %>
+        </main>
+        
+        <%- include('shared/footer'); %>
+    </body>
+
+</html>
