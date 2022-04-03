@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <%- include('shared/head'); %>
+    </head>
+    <body>
+        <%- include('shared/nav-bar', { user }); %>
+        
+        <main class="container">
+           <section>
+            <% if(list.length != 0) { %>
+            <% list.forEach(function(item) { %>
+                <article class="col m10 offset-m1 post-card">
+                    <h5><%= item.title %></h5>
+                    <p class="truncate"><%= item.text %></p>
+                    <p class="right-align">em: <%= item.created_at.toLocaleDateString() %></p>
+                    <p><a href="postagem/<%= item.id %>">Ler mais</a></p>
+                    <hr />
+                </article>
+            <% }); %>
+            <ul class="pagination">
+                <% if( currentPage == 1) { %>
+                    <li class="disabled">
+                <% } else { %>
+                    <li class="waves-effect">
+                <% } %><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <% for (var i = 1; i <= lastPage; i++) { %>
+                    <% if( i == currentPage) { %>
+                        <li class="active"><a><%= i %></a></li>
+                    <% } else { %>
+                        <li class="waves-effect"><a href="/postagens/<%= i %><%= queryString %>"><%= i %></a></li>
+                    <% } %>
+                <% } %>
+                
+                <% if( currentPage == lastPage) { %>
+                    <li class="disabled">
+                <% } else { %>
+                    <li class="waves-effect">
+                <% } %><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+              </ul>
+            <% } else { %>
+                <article class="col m10 offset-m1 post-card">
+                    <p class="center-align"><b>Sem postagens para apresentar</b></p>
+                </article>
+            <% } %>
+           </section>
+        </main>
+        
+        <%- include('shared/footer'); %>
+    </body>
+
+</html>

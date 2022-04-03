@@ -7,14 +7,23 @@
         <%- include('shared/nav-bar', { user }); %>
         
         <main class="container">
-            <% list.forEach(function(item) { %>
-                <div class="col m10 offset-m1 post-card">
-                    <h3><%= item.title %></h3>
-                    <p><%= item.text %></p>
-                    <p>< href="postagem/<%= item.id %>">Ler mais</a></p>
-                    <hr />
-                </div>
-            <% }); %>
+           <section>
+            <% if(list.length != 0) { %>
+                <% list.forEach(function(item) { %>
+                    <article class="col m10 offset-m1 post-card">
+                        <h5><%= item.title %></h5>
+                        <p class="truncate"><%= item.text %></p>
+                        <p class="right-align">em: <%= item.created_at.toLocaleDateString() %></p>
+                        <p><a href="postagem/<%= item.id %>">Ler mais</a></p>
+                        <hr />
+                    </article>
+                <% }); %>
+            <% } else { %>
+                <article class="col m10 offset-m1 post-card">
+                    <p class="center-align"><b>Sem postagens para apresentar</b></p>
+                </article>
+            <% } %>
+           </section>
         </main>
         
         <%- include('shared/footer'); %>

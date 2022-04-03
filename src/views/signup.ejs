@@ -10,20 +10,21 @@
             <div class="signup-form">
                 <form method="post" action="/usuario/cadastrar" class="col s12">
                     <div class="row">
+                        <input type="hidden" name="id" value="<%= user?.id %>" />
                         <div class="input-field col s12">
-                            <input placeholder="Nome Completo" id="first_name" type="text" class="validate" autofocus required>
-                            <label for="first_name">Nome</label>
+                            <input placeholder="Nome Completo" maxlength="255" id="name" name="name" value="<%= user?.name %>" type="text" class="validate" autofocus required />
+                            <label for="name">Nome</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" required>
+                            <input id="email" name="email" maxlength="255" type="email" value="<%= user?.email %>" class="validate" required />
                             <label for="email">Email</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="password" class="validate" required>
+                            <input id="password" name="password" maxlength="255" type="password" value="<%= user?.password %>" class="validate" required />
                             <label for="password">Senha</label>
                         </div>
                     </div>

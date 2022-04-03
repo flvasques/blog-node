@@ -8,3 +8,21 @@
 .signup-form {
     margin-top: 25px !important;
 }
+
+.pagination li.active {
+    cursor: pointer;
+    background-color: #895e60;
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    margin-top: 1em;
+}
+
+table {
+    margin: 1em 0 1em 0;
+}
